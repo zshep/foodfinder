@@ -16,9 +16,8 @@ body {
 }
 
 .foodChoice {
-    display: block;
-    height: 40%;
-    margin: 3%;
+    display: flex;
+    margin: 10%;
     justify-content: center;
 
 }

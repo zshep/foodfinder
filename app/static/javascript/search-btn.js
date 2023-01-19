@@ -1,15 +1,23 @@
 // grabing variable for search button
+const btn = document.querySelector('#btn');
+const foodItemContainer = document.querySelector('#foodItem');
 
-const btn = document.querySelector('#btn')
+// setting up temporary list for food
+const items = ["pizza", "quesadillas", "sheet pan", "sandwhiches", "soup"];
+
 
 
 //function to handle btn search
-async function searchBtn(event) {
+function searchBtn(event) {
     event.preventDefault();
 
-    console.log('The button has been pressed')
+    //grabbing a random item 
+    chosenItem = items[(Math.floor(Math.random() * items.length))];
+    console.log(`The chosen item was ${chosenItem}`);
 
-
+    //setting the fooditem text value as chosenItem
+    foodItemContainer.value = chosenItem;
+    return;
 }
 
 
