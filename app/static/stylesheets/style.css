@@ -1,3 +1,33 @@
 * {
     box-sizing: border-box;
   }
+
+body {
+    display: block;
+
+}
+
+/* styling for classes */
+.welcome {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;  
+}
+
+.foodChoice {
+    display: block;
+    height: 40%;
+    margin: 3%;
+    justify-content: center;
+
+}
+
+.button {
+    display: flex;
+    
+    color: black;
+    border-radius: 2%;
+    justify-content: center;
+
+}
