@@ -16,7 +16,7 @@ function searchBtn(event) {
     console.log(`The chosen item was ${chosenItem}`);
 
     //setting the fooditem text value as chosenItem
-    foodItemContainer.value = chosenItem;
+    foodItemContainer.innerHTML = chosenItem;
     return;
 }
 
