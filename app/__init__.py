@@ -1,5 +1,6 @@
 from flask import Flask
 from app.routes import home
+from app.db import init_db
 
 
 def create_app(test_config=None):
@@ -16,5 +17,6 @@ def create_app(test_config=None):
     return 'Welcome Shep'
   app.register_blueprint(home)
 
-  
+  init_db(app)
+
   return app
