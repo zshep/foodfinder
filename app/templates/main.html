@@ -17,8 +17,11 @@
     </div>
 
     <div class="foodChoice">
-        {% include "partials/foodItems.html" %}
-       
+        {% for food in foods %}
+        <li>
+            {% include "partials/foodItems.html" %}
+        </li>
+        {% endfor %}
 
     </div>
 
