@@ -14,20 +14,24 @@ async function searchBtn(event) {
     console.log('the button has been pressed');
 
     // my attempt at using fetch api to grab random food item from db
-    await fetch('/fooditems')
+    await fetch('/food')
 
-      .then((response =>{
+      .then((response) => {
         if (!response.ok) {
           console.log(response);
           throw new Error(`HTTP error: ${response.status} `)
-        }
-        console.log(response);
-
-        return document.location.reload;
-
-      }))
-
+        }   
+      })
+      console.log('fetch has been initiated')
       
+     /*  .then((data) => {
+        let food = JSON.stringify(data);
+        console.log(food);
+      }) */
+      /* .catch(function(error) {
+        console.log(error);
+      }); */
+        
     
 }
 
