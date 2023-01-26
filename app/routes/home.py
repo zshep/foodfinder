@@ -15,22 +15,21 @@ def index():
     )
 
 # route to get all the food items
-@bp.route('/food')
-def getFooditems():
-  #get one random food item post
+@bp.get('/food')
+def food_get():
   db = get_db()
   
+  #get all the food items (for testing purposes)
   try:
     print('starting query')
-    food = db.query(Food).all()
-    print('about to send query to front end')
+    food = db.query(Food).select(food.foodname).order_by(func.rand())
+    print(food)
   except:
     print('something went wrong with random query')
     print(sys.exc_info()[0])
   
   print('we got to return statement')
-  return render_template('main.html',
-  food=food)
+  return render_template('main.html')
 
 
     #adding in errorhandler

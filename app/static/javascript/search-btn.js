@@ -16,22 +16,16 @@ async function searchBtn(event) {
     // my attempt at using fetch api to grab random food item from db
     await fetch('/food')
 
-      .then((response) => {
-        if (!response.ok) {
-          console.log(response);
-          throw new Error(`HTTP error: ${response.status} `)
-        }   
-      })
-      console.log('fetch has been initiated')
-      
-     /*  .then((data) => {
-        let food = JSON.stringify(data);
-        console.log(food);
-      }) */
-      /* .catch(function(error) {
+      .then(function(response) {
+        response.json().then(function(data){
+          console.log(data);
+
+        });
+
+
+      }).catch(function(error) {
         console.log(error);
-      }); */
-        
+      });         
     
 }
 
@@ -40,7 +34,20 @@ async function searchBtn(event) {
 btn.addEventListener('click', searchBtn);
 
 
-
+/* .then((response) => {
+  if (!response.ok) {
+    console.log(response);
+    throw new Error(`HTTP error: ${response.status} `)
+  }
+  console.log('this should be response from backend')
+  console.log(response.json());
+  return response.json
+})
+.then((data) => {
+  
+  console.log(data);
+})
+ */
 
 
 //      ----------- searchBtn code for No Database----------
