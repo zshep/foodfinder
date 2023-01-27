@@ -17,15 +17,18 @@ async function searchBtn(event) {
     await fetch('/food')
 
       .then(function(response) {
-        response.json().then(function(data){
+          response.json().then((data) => {
+          console.log('we are at the second then')
           console.log(data);
 
         });
 
 
       }).catch(function(error) {
-        console.log(error);
-      });         
+          console.error(error);
+      });
+      
+    console.log('we should be done with the fetch API');
     
 }
 

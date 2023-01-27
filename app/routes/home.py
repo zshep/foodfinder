@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, render_template
 from app.models import Food
 from app.db import get_db
-from sqlalchemy.sql.expression import func, select
+from  sqlalchemy.sql.expression import func, select
 import sys
 
 bp = Blueprint('home', __name__, url_prefix='/')
@@ -11,24 +11,30 @@ bp = Blueprint('home', __name__, url_prefix='/')
 def index():
         
     return render_template(
-      'main.html',
+      'main.html'
     )
 
 # route to get all the food items
-@bp.get('/food')
+@bp.route('/food')
 def food_get():
   db = get_db()
   
   #get all the food items (for testing purposes)
   try:
     print('starting query')
-    food = db.query(Food).select(food.foodname).order_by(func.rand())
-    print(food)
+    food = (
+      db
+        .query(Food.foodname)
+        .order_by(func.rand())
+        .first()
+    )
+    
   except:
     print('something went wrong with random query')
     print(sys.exc_info()[0])
   
-  print('we got to return statement')
+  
+  print(food)
   return render_template('main.html')
 
 
