@@ -33,9 +33,9 @@ def food_get():
     print('something went wrong with random query')
     print(sys.exc_info()[0])
   
-  
+  print('Here comes your food')
   print(food)
-  return render_template('main.html')
+  return render_template('food.html', food=food)
 
 
     #adding in errorhandler

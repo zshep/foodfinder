@@ -8,29 +8,39 @@ const items = ["pizza", "quesadillas", "sheet pan", "sandwhiches", "soup"];
 
 
 //function to handle btn search
-async function searchBtn(event) {
-    event.preventDefault();
-    
-    console.log('the button has been pressed');
+function searchBtn(event) {
+  event.preventDefault();
 
-    // my attempt at using fetch api to grab random food item from db
-    await fetch('/food')
+  console.log('the button has been pressed');
 
-      .then(function(response) {
-          response.json().then((data) => {
-          console.log('we are at the second then')
-          console.log(data);
+  return getFood()
 
-        });
-
-
-      }).catch(function(error) {
-          console.error(error);
-      });
-      
-    console.log('we should be done with the fetch API');
-    
 }
+
+async function getFood() {
+  
+  console.log('getfood() has been started')
+  
+ await fetch("/food")
+    .then((res) => {
+      
+       console.log(res) 
+        res.json();
+      
+    })
+    .then((data) => {
+
+      console.log(data)
+      
+      console.log('we should be done with the fetch API');
+      
+    })
+    .catch((error) => {
+      console.error('The fetch operation fucked up', error);
+    });
+    
+
+};
 
 
 // setting listener event to btn
@@ -47,7 +57,7 @@ btn.addEventListener('click', searchBtn);
   return response.json
 })
 .then((data) => {
-  
+
   console.log(data);
 })
  */
@@ -63,3 +73,5 @@ console.log(`The chosen item was ${chosenItem}`);
 //setting the fooditem text value as chosenItem
 foodItemContainer.innerHTML = chosenItem;
 return; */
+
+
