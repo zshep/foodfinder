@@ -35,7 +35,10 @@ def food_get():
   
   print('Here comes your food')
   print(food)
-  return render_template('food.html', food=food)
+  return render_template(
+    'main.html',
+    food_data=food
+  )
 
 
     #adding in errorhandler

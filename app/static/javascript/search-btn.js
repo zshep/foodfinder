@@ -21,16 +21,14 @@ async function getFood() {
   
   console.log('getfood() has been started')
   
- await fetch("/food")
+  await fetch('/food')
     .then((res) => {
-      
-       console.log(res) 
-        res.json();
+      res.json();
       
     })
-    .then((data) => {
+    .then(function(data) {
 
-      console.log(data)
+      console.log((data))
       
       console.log('we should be done with the fetch API');
       
@@ -38,9 +36,12 @@ async function getFood() {
     .catch((error) => {
       console.error('The fetch operation fucked up', error);
     });
+
+    
     
 
 };
+
 
 
 // setting listener event to btn
