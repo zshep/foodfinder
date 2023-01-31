@@ -13,7 +13,10 @@ function searchBtn(event) {
 
   console.log('the button has been pressed');
 
-  return getFood()
+  getFood()
+
+  console.log('getfood() should be done')
+  document.location.replace('/food');
 
 }
 
