@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, render_template
+from flask import Blueprint, jsonify, make_response, render_template
 from app.models import Food
 from app.db import get_db
 from  sqlalchemy.sql.expression import func, select
@@ -22,8 +22,15 @@ def get_allfood():
         .query(Food.foodname)
         .all()
     )
+  print(allfood)
 
-  return 
+  data = {
+    "Test" : "your mom",
+    "food_data" : "allfood",
+
+  }
+
+  return jsonify(data)
 
 
 
@@ -48,10 +55,12 @@ def food_get():
   
   print('Here comes your food')
   print(food)
+
+  
   return render_template(
-    'main.html',
-    food_data=food
-  )
+    'main.html', 
+    food=food
+    )
 
 
     #adding in errorhandler

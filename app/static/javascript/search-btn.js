@@ -9,10 +9,10 @@ function searchBtn(event) {
 
   console.log('the button has been pressed');
 
-  getFood()
-
-  console.log('getfood() should be done')
   
+  getFood()
+  
+  console.log('getfood() should be done')
   
   
 
@@ -27,18 +27,17 @@ function getFood() {
       res.json();
       
     })
-    .then(function(data) {
+    .then((data) => {
 
-      console.log((data))
+      console.log(data)
       
-      console.log('we should be done with the fetch API');
       
+      document.location.replace('/food')
     })
     .catch((error) => {
       console.error('The fetch operation fucked up', error);
     });
 
-    
     
     
 
