@@ -14,7 +14,20 @@ def index():
       'main.html'
     )
 
-# route to get all the food items
+@bp.route('/allfood')
+def get_allfood():
+  db = get_db()
+  allfood = (
+      db
+        .query(Food.foodname)
+        .all()
+    )
+
+  return 
+
+
+
+# route to get a single food item
 @bp.route('/food')
 def food_get():
   db = get_db()
@@ -42,7 +55,7 @@ def food_get():
 
 
     #adding in errorhandler
-@bp.route('/*')
+
 @bp.errorhandler(404)
 def page_not_found(error):
     return render_template('page_not_found.html'), 404

@@ -2,10 +2,6 @@
 const btn = document.querySelector('#btn');
 const foodItemContainer = document.querySelector('#foodItem');
 
-// setting up temporary list for food
-const items = ["pizza", "quesadillas", "sheet pan", "sandwhiches", "soup"];
-
-
 
 //function to handle btn search
 function searchBtn(event) {
@@ -16,15 +12,17 @@ function searchBtn(event) {
   getFood()
 
   console.log('getfood() should be done')
-  document.location.replace('/food');
+  
+  
+  
 
 }
 
-async function getFood() {
+function getFood() {
   
   console.log('getfood() has been started')
   
-  await fetch('/food')
+  fetch('/food')
     .then((res) => {
       res.json();
       
@@ -42,6 +40,7 @@ async function getFood() {
 
     
     
+    
 
 };
 
@@ -51,31 +50,6 @@ async function getFood() {
 btn.addEventListener('click', searchBtn);
 
 
-/* .then((response) => {
-  if (!response.ok) {
-    console.log(response);
-    throw new Error(`HTTP error: ${response.status} `)
-  }
-  console.log('this should be response from backend')
-  console.log(response.json());
-  return response.json
-})
-.then((data) => {
 
-  console.log(data);
-})
- */
-
-
-//      ----------- searchBtn code for No Database----------
-
-/* 
-//grabbing a random item 
-chosenItem = items[(Math.floor(Math.random() * items.length))];
-console.log(`The chosen item was ${chosenItem}`);
-
-//setting the fooditem text value as chosenItem
-foodItemContainer.innerHTML = chosenItem;
-return; */
 
 
