@@ -61,7 +61,11 @@ def food_get():
     'main.html', 
     food=food
     )
+@bp.route('/addfood')
+def add_food():
 
+
+  return render_template('addfood.html')
 
     #adding in errorhandler
 
