@@ -22,11 +22,26 @@ body {
 
 }
 
+
 .button {
     display: flex;
     
     color: black;
     border-radius: 2%;
     justify-content: center;
+
+}
+
+
+/* styling for the addfood page */
+.foodForm {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    
+    }
+#submitbtn {
+    align-self: center;
 
 }
