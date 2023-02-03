@@ -63,7 +63,7 @@ def food_get():
     )
 @bp.route('/addfood')
 def add_food():
-
+  
 
   return render_template('addfood.html')
 
