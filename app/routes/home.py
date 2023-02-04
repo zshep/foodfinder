@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, make_response, render_template
+from flask import Blueprint, jsonify, make_response, render_template, request
 from app.models import Food
 from app.db import get_db
 from  sqlalchemy.sql.expression import func, select
@@ -61,11 +61,36 @@ def food_get():
     'main.html', 
     food=food
     )
-@bp.route('/addfood')
-def add_food():
-  
 
-  return render_template('addfood.html')
+@bp.route('/addfood', methods=['GET','POST'])
+def add_food():
+  if request.method == 'POST':
+ 
+    data = request.get_json()
+    db = get_db()
+    print('about to do the post request')
+    try:
+      newFood = Food(
+        foodname = data['foodname']
+      )
+
+      #save to database
+      db.add(newFood)
+      db.commit()
+      print('Newfood has been added', newFood)
+
+    except:
+
+      # insert failed, so send error to front end
+      print(sys.exe_info()[0])
+
+      # insert failed, so rollback and send error to front end
+      db.rollback()
+      return jsonify(message = 'adding new food has failed'), 500  
+
+    return render_template('main.html')
+  else:
+    return render_template('addfood.html')
 
     #adding in errorhandler
 

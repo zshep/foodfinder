@@ -18,7 +18,6 @@ async function submitfood(event) {
         }),
         headers: {
             'Content-Type': 'application/json'
-
         }
     });
     if (response.ok) {
@@ -29,11 +28,7 @@ async function submitfood(event) {
         alert(response.statusText)
 
     }
-
-    
 }
-
-
 
 
 submitbtn.addEventListener('click', submitfood)
