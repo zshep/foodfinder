@@ -1,20 +1,35 @@
 // grabbing variable for submit btn
 const submitbtn = document.querySelector('#submitbtn');
 const foodItem = document.querySelector('#newFood');
+const checkbox = document.querySelector('#ishot');
 
 
+// function to add new food item, and various details
 async function submitfood(event) {
     event.preventDefault();
+    
+    //checking to see if box is checked or not
+    if (checkbox.checked) {
+        ishot = true;
+    } else {
+        ishot = false;
+    }
+    console.log(ishot);
 
     const foodname = foodItem.value;
     console.log('the submit button was hit')
     console.log('the new food is...', foodname)
-    console.log(foodname)
+    console.log('The food is hot:', ishot)
+    
 
+
+    // Sending a foodname to get added to db
     const response = await fetch('/addfood', {
         method: 'POST',
         body: JSON.stringify({
-            foodname
+            foodname,
+            ishot
+            
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -28,7 +43,9 @@ async function submitfood(event) {
         alert(response.statusText)
 
     }
-}
+    //sending if new food is hot or not to server
+
+}    
 
 
 submitbtn.addEventListener('click', submitfood)
