@@ -5,4 +5,4 @@ class Food(Base):
     __tablename__='foods'
     id = Column(Integer, primary_key=True)
     foodname = Column(String(20), nullable=False)
-    ishot = Column(Boolean, nullable=True)
+    ishot = Column(Boolean, nullable=False, default=True)

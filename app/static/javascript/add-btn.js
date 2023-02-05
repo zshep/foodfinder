@@ -1,12 +1,13 @@
 // grabbing variable for submit btn
 const submitbtn = document.querySelector('#submitbtn');
 const foodItem = document.querySelector('#newFood');
-const checkbox = document.querySelector('#ishot');
+const checkbox = document.querySelector('#isHot');
 
 
 // function to add new food item, and various details
 async function submitfood(event) {
     event.preventDefault();
+    
     
     //checking to see if box is checked or not
     if (checkbox.checked) {
@@ -43,7 +44,7 @@ async function submitfood(event) {
         alert(response.statusText)
 
     }
-    //sending if new food is hot or not to server
+    
 
 }    
 
