@@ -71,7 +71,8 @@ def add_food():
     print('about to do the post request')
     try:
       newFood = Food(
-        foodname = data['foodname']
+        foodname = data['foodname'],
+        ishot = data['ishot']
       )
 
       #save to database
