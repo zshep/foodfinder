@@ -57,10 +57,7 @@ def food_get():
   print(food)
 
   
-  return render_template(
-    'main.html', 
-    food=food
-    )
+  return jsonify(food = food[0])
 
 @bp.route('/addfood', methods=['GET','POST'])
 def add_food():
@@ -91,7 +88,7 @@ def add_food():
 
     return render_template('main.html')
   else:
-    return render_template('addfood.html')
+    return render_template('main.html')
 
     #adding in errorhandler
 
