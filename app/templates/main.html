@@ -8,25 +8,29 @@
     <title>Food Finder</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
-    <div class="welcome">
-        <h1>What should we have for dinner?</h1>
+    <div id="reactdiv">
+        <div class="welcome">
+            <h1>What should we have for dinner?</h1>
 
-        
 
+
+        </div>
+
+        <div class="foodChoice" id="givenfooditem">
+
+
+        </div>
+
+        <div class="button">
+            <button id="btn">Pick a food</button>
+            <button id="addbtn">Add a food</button>
+        </div>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="/javascript/search-btn.js"></script>
     </div>
-
-    <div class="foodChoice" id="givenfooditem">
-       
-
-    </div>
-
-    <div class="button">
-        <button id="btn">Pick a food</button>
-        <button id="addbtn">Add a food</button>
-    </div>
-
-    <script src="/javascript/search-btn.js"></script>
-    
 </body>
+
 </html>
