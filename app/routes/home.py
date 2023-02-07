@@ -30,7 +30,7 @@ def get_allfood():
 
   }
 
-  return jsonify(data)
+  return jsonify(allfood)
 
 
 
@@ -57,10 +57,7 @@ def food_get():
   print(food)
 
   
-  return render_template(
-    'main.html', 
-    food=food
-    )
+  return jsonify(food = food[0])
 
 @bp.route('/addfood', methods=['GET','POST'])
 def add_food():

@@ -14,31 +14,36 @@ function searchBtn(event) {
   
   getFood()
   
-  console.log('getfood() should be done')
+  
   
 }
 
 function getFood() {
   
-  console.log('getfood() has been started')
+  
   
   fetch('/food')
     .then((res) => {
-      res.json();
       
+      const data =  res.json();
+      
+      return data
+      
+
     })
     .then((data) => {
+      const foodput = document.querySelector("#givenfooditem")
+      
+      console.log('the food is...', data.food)      
+      foodput.innerHTML = data.food;
 
-      console.log(data)
-      
-      
-      document.location.replace('/food')
     })
+    
     .catch((error) => {
       console.error('The fetch operation fucked up', error);
     });
 };
-
+// function to go to add food template
 function addBtn(event) {
   event.preventDefault();
   console.log('the add btn was pushed');
