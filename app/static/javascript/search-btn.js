@@ -4,7 +4,6 @@ const addbtn = document.querySelector('#addbtn');
 const foodItemContainer = document.querySelector('#foodItem');
 
 
-
 //function to handle btn search
 function searchBtn(event) {
   event.preventDefault();
