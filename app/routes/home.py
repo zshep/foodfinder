@@ -30,7 +30,7 @@ def get_allfood():
 
   }
 
-  return jsonify(data)
+  return jsonify(allfood)
 
 
 
@@ -88,7 +88,7 @@ def add_food():
 
     return render_template('main.html')
   else:
-    return render_template('main.html')
+    return render_template('addfood.html')
 
     #adding in errorhandler
 

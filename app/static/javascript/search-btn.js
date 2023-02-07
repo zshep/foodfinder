@@ -14,13 +14,13 @@ function searchBtn(event) {
   
   getFood()
   
-  console.log('getfood() should be done')
+  
   
 }
 
 function getFood() {
   
-  console.log('getfood() has been started')
+  
   
   fetch('/food')
     .then((res) => {
@@ -43,12 +43,12 @@ function getFood() {
       console.error('The fetch operation fucked up', error);
     });
 };
-
+// function to go to add food template
 function addBtn(event) {
   event.preventDefault();
   console.log('the add btn was pushed');
 
- /*  document.location.replace('/addfood'); */
+  document.location.replace('/addfood');
 
 }
 
